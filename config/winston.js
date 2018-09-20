@@ -13,7 +13,11 @@ var options = {
     colorize: false,
   },
   console: {
+<<<<<<< HEAD
+    level: 'info',
+=======
     level: 'debug',
+>>>>>>> efd9469b613e46002f0df24d0920f389c477c0f4
     handleExceptions: true,
     json: false,
     colorize: true,
