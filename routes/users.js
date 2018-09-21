@@ -1,5 +1,4 @@
 var express = require('express');
-<<<<<<< HEAD
 const tracing = require('@opencensus/nodejs');
 const stackdriver = require('@opencensus/exporter-stackdriver');
 const stdin = process.openStdin();
@@ -30,12 +29,6 @@ const winston = require('../config/winston');
 
 /* GET userlist. */
 app.get('/userlist', function(req, res) {
-=======
-var router = express.Router();
-
-/* GET userlist. */
-router.get('/userlist', function(req, res) {
->>>>>>> efd9469b613e46002f0df24d0920f389c477c0f4
   var db = req.db;
   var collection = db.get('userlist');
   collection.find({},{},function(e,docs){
@@ -43,7 +36,6 @@ router.get('/userlist', function(req, res) {
   });
 });
 
-<<<<<<< HEAD
 function delay() {
   const span = tracer.startChildSpan('calculatePrime');
   span.start();
@@ -117,21 +109,6 @@ function handleInvalidZipCode(res){
 
 /* DELETE to deleteuser. */
 app.delete('/deleteuser/:id', function(req, res) {
-=======
-/* POST to adduser. */
-router.post('/adduser', function(req, res) {
-  var db = req.db;
-  var collection = db.get('userlist');
-  collection.insert(req.body, function(err, result){
-    res.send(
-      (err === null) ? { msg: 'successful request' } : { msg: err }
-    );
-  });
-});
-
-/* DELETE to deleteuser. */
-router.delete('/deleteuser/:id', function(req, res) {
->>>>>>> efd9469b613e46002f0df24d0920f389c477c0f4
   var db = req.db;
   var collection = db.get('userlist');
   var userToDelete = req.params.id;
@@ -140,12 +117,8 @@ router.delete('/deleteuser/:id', function(req, res) {
   });
 });
 
-<<<<<<< HEAD
 function getProjectId() {
   return "userlist-216918";
 }
 
 module.exports = app;
-=======
-module.exports = router;
->>>>>>> efd9469b613e46002f0df24d0920f389c477c0f4

@@ -17,4 +17,4 @@ runtime: nodejs8
 # [END gae_quickstart_yaml]
 
 env_variables:
-  db: "your_db_connection_string"
+  db: "your_mongodb_connection_string"
