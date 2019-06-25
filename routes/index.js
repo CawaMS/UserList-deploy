@@ -42,7 +42,7 @@ router.post('/adduser', function(req, res) {
     //test for valid zipcode
     var isValidZipCode = false;
 
-    //winston.log('info', " adding new user from : " +  location + ", zip code : " + zipCode);
+    winston.log('info', " adding new user from : " +  location + ", zip code : " + zipCode + " username: "+userName + " email: "+ userEmail);
   
     if (location == "us" || location == "usa") {	  
 	  isValidZipCode = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipCode);
@@ -71,6 +71,7 @@ router.post('/adduser', function(req, res) {
             }
     });
     }else{
+        winston.log("invalid location: "+ location);
         res.statusCode = 500;
         res.send( { msg: "Invalid Zip Code"} );
     }
