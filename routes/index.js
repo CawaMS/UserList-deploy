@@ -73,7 +73,7 @@ router.post('/adduser', function(req, res) {
             }
     });
     }else{
-        winston.log("invalid location: "+ location);
+        winston.log('error', "invalid location: "+ location);
         res.statusCode = 500;
         res.send( { msg: "Invalid Zip Code"} );
     }
